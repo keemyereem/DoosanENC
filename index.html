@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>두산건설</title>
+        <link rel="icon" href="admin/images/favicon.png" sizes="32x32">
+        <style type="text/css">
+            body, td, th, div, span, p, a {font-size:12px; margin: 0; padding: 0; font-family: "Malgun Gothic", "맑은 고딕", "돋움", "dotum";}
+            body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, form, fieldset, input, table, tr, th, td, a, span, em, button, textarea, header, footer, nav, section, aside.all_menu, article {margin: 0; padding: 0; box-sizing: border-box;}
+            body {padding-bottom:20px;}
+            ul, ol, li {list-style: none;}
+
+            .blind {display:none;}
+            .header {position:relative; background:#22591b; padding:10px; color:#fff; font-size:16px; font-weight:bold;}
+            .content_tab {margin:15px 0 0 15px;}
+            .content_tab ul li {display:inline-block; *display:inline-block; margin-right:15px; zoom:1;}
+            .content_tab ul li a {margin:10px; text-decoration:none; outline-style:none; color:#787878; font-size:16px; font-weight:bold;}
+            .content_tab ul li a:hover, a:active, a:visited {text-decoration: none;}
+            .content_tab ul li.active a {color:#22591b;}
+
+            .content {padding:15px;}
+            .content table {width:100%; border-collapse:collapse; border-spacing:0;}
+            .content table.mt15 {margin-top:15px;}
+            .content th {background:#f3f3f3;}
+            .content th, .content td {border:1px solid #ddd; border-spacing:0; padding:5px; text-align:center;}
+        </style>
+        <script type="text/javascript" src="admin/js/lib/jquery-1.12.4.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#tab_list").find("ul").find("li").find("a").on("click", function () {
+                    var currentIdx = $(this).parent().index();
+                    $(this).parent().parent().find("li").removeClass("active");
+                    $(this).parent().addClass("active");
+                    $(".content").addClass("blind");
+                    $(".content").eq(currentIdx).removeClass("blind");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">두산건설 퍼블리싱 리스트</div>
+        <div id="tab_list" class="content_tab">
+            <ul style="float: left;">
+                <li class="active"><a href="javascript:;">사용자 국문</a></li>
+                <!-- <li><a href="javascript:;">사용자 영문</a></li>
+                <li><a href="javascript:;">관리자</a></li> -->
+            </ul>
+        </div>
+        <div style="float: right; padding: 0 15px 15px;">
+            ○ : 작업 중 
+            ● : 작업 완료
+        </div>
+        <!-- 사용자 국문 -->
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>1depth</th>
+                        <th>2depth</th>
+                        <th>3depth</th>
+                        <th>4depth</th>
+                        <th>비고</th>
+                        <th>화면 ID</th>
+                        <th width="100">PC</th>
+                        <th width="100">Tablet</th>
+                        <th width="100">Mobile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>메인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-00-01-001.html" target="_blank">FD-00-01-001.html</a></td>
+                        <td>○</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td rowspan="5">공통</td>
+                        <td>sitemap</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="include/sitemap.html" target="_blank">sitemap.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>header</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="include/header.html" target="_blank">header.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>footer</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="include/footer.html" target="_blank">footer.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>개인정보취급방침</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank">FD-00-00-0021.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>통합검색결과</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank">FD-00-00-0031.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">회사소개</td>
+                        <td>CEO 인사말</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-01-01-0011.html" target="_blank">FD-01-01-0011.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>연혁</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank">FD-01-02-0011.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>경영비전</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank">FD-01-03-0011.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>CI</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank">FD-01-04-0011.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>찾아오시는 길</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-01-05-0011.html" target="_blank">FD-01-05-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="21">사업소개</td>
+                        <td>개요</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-02-00-0011.html" target="_blank">FD-02-00-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td>●</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="10">수처리</td>
+                        <td bgcolor="#ffed8c">팝업 페이지</td>
+                        <td bgcolor="#ffed8c"></td>
+                        <td bgcolor="#ffed8c"></td>
+                        <td bgcolor="#ffed8c">O&M, 환경건설에 탑재</td>
+                        <td bgcolor="#ffed8c">●</td>
+                        <td bgcolor="#ffed8c"></td>
+                        <td bgcolor="#ffed8c"></td>
+                    </tr>
+                    <tr>
+                        <td>O&M</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-02-01-0011.html" target="_blank">FD-02-01-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td>●</td>
+                    </tr>
+                    <tr>
+                        <td>환경건설</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-02-01-0021.html" target="_blank">FD-02-01-0021.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="7">기술역량</td>
+                        <td>지적재산권</td>
+                        <td></td>
+                        <td><a href="html/FD-02-01-0031.html" target="_blank">FD-02-01-0031.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>정도관리</td>
+                        <td></td>
+                        <td><a href="html/FD-02-01-0032.html" target="_blank">FD-02-01-0032.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">공법</td>
+                        <td>공법1</td>
+                        <td><a href="html/FD-02-01-0133.html" target="_blank">FD-02-01-0133.html</a></td>
+                        <td>○</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>공법2</td>
+                        <td><a href="" target="_blank">FD-02-01-0033.html</a></td>
+                        <td>○</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>공법3</td>
+                        <td><a href="" target="_blank">FD-02-01-0033.html</a></td>
+                        <td>○</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>공법4</td>
+                        <td><a href="" target="_blank">FD-02-01-0033.html</a></td>
+                        <td>○</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>기술지원</td>
+                        <td></td>
+                        <td><a href="html/FD-02-01-0034.html" target="_blank">FD-02-01-0034.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="10">Green</td>
+                        <td rowspan="4">에너지</td>
+                        <td>개요</td>
+                        <td></td>
+                        <td><a href="html/FD-02-02-0011.html" target="_blank">FD-02-02-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>소각</td>
+                        <td></td>
+                        <td><a href="html/FD-02-02-0012.html" target="_blank">FD-02-02-0012.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>폐열회수</td>
+                        <td></td>
+                        <td><a href="html/FD-02-02-0013.html" target="_blank">FD-02-02-0013.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>폐열발전</td>
+                        <td></td>
+                        <td><a href="html/FD-02-02-0014.html" target="_blank">FD-02-02-0014.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">자원순환</td>
+                        <td>매립</td>
+                        <td></td>
+                        <td><a href="html/FD-02-02-0021.html" target="_blank">FD-02-02-0021.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>폐유</td>
+                        <td></td>
+                        <td><a href="html/FD-02-02-0022.html" target="_blank">FD-02-02-0022.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>폐수</td>
+                        <td></td>
+                        <td><a href="html/FD-02-02-0023.html" target="_blank">FD-02-02-0023.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">New BIZ</td>
+                        <td>전체</td>
+                        <td></td>
+                        <td><a href="html/FD-02-03-0011.html" target="_blank">FD-02-03-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>열분해 유화</td>
+                        <td></td>
+                        <td><a href="html/FD-02-03-0012.html" target="_blank">FD-02-03-0012.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>선별장 O&M</td>
+                        <td></td>
+                        <td><a href="html/FD-02-03-0013.html" target="_blank">FD-02-03-0013.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="7">지속가능경영</td>
+                        <td rowspan="2">윤리경영</td>
+                        <td>윤리경영 소개</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-03-01-0011.html" target="_blank">FD-03-01-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td>●</td>
+                    </tr>
+                    <tr>
+                        <td>상담/제보</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-03-01-0021.html" target="_blank">FD-03-01-0021.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td>●</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">안전보건</td>
+                        <td>안전보건 소개</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-03-02-0011.html" target="_blank">FD-03-02-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>건의/제보</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-03-02-0021.html" target="_blank">FD-03-02-0021.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td>●</td>
+                    </tr>
+                    <tr>
+                        <td>공정거래 자율준수 프로그램 </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-03-03-0011.html" target="_blank">FD-03-03-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>탄소저감</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-03-04-0011.html" target="_blank">FD-03-04-0011.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>사회공헌</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-03-05-0011.html" target="_blank">FD-03-05-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">투자정보</td>
+                        <td rowspan="2">News</td>
+                        <td>리스트</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-04-01-0011.html" target="_blank">FD-04-01-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>상세페이지</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-04-01-0012.html" target="_blank">FD-04-01-0012.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">재무정보</td>
+                        <td>재무상태표</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-04-02-0011.html" target="_blank">FD-04-02-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>손익계산서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-04-02-0012.html" target="_blank">FD-04-02-0012.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">공시/공고</td>
+                        <td>리스트</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-04-03-0011.html" target="_blank">FD-04-03-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>상세페이지</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-04-03-0012.html" target="_blank">FD-04-03-0012.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">인재채용</td>
+                        <td>인사제도</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank">FD-05-01-0011.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">채용정보</td>
+                        <td>채용공고</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-05-02-0011.html" target="_blank">FD-05-02-0011.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>    
+                    <tr>
+                        <td>채용프로세스</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="" target="_blank">FD-05-02-0021.html</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>    
+                    <tr>
+                        <td>직무소개</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-05-02-0031.html" target="_blank">FD-05-02-0031.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>    
+                    <tr>
+                        <td>채용 FAQ</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="html/FD-05-02-0041.html" target="_blank">FD-05-02-0041.html</a></td>
+                        <td>●</td>
+                        <td></td>
+                        <td></td>
+                    </tr>             
+                </tbody>
+            </table>
+        </div>
+
+
+    </body>
+
+</html>
