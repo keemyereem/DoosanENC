@@ -61,7 +61,7 @@ body *{line-height:1.2em; word-break:keep-all}
 .header .header_ui .lang{display:inline-block; vertical-align: middle; text-align: left; margin-right: 60px;}
 .header .header_ui .lang li{position:relative; display:inline-block; vertical-align: top; margin-right: 36px;}
 .header .header_ui .lang li:last-of-type{margin-right: 0;}
-.header .header_ui .lang li a{font-family: 'Montserrat'; display:inline-block; vertical-align: top; line-height:100px; font-weight:600; font-size:15px; color: #b5b5b5;}
+.header .header_ui .lang li a{font-family: 'Montserrat'; display:inline-block; vertical-align: top; line-height:100px; font-weight:600; font-size:18px; color: #b5b5b5;}
 .header .header_ui .lang li.on a{color: #e50012;}
 .header .header_ui .icon{display:inline-block; vertical-align: middle;}
 .header .header_ui .icon .search{display:inline-block; vertical-align: middle; cursor: pointer;}
