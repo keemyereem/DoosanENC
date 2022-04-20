@@ -20,10 +20,10 @@ figure{margin: 0;}
 /* 鍮꾩＜�� */
 .mv{position: relative;}
 .mv .scroll{position:absolute; bottom: 125px; left: 126px; z-index: 100;}
-.mv .scroll::after{content:""; position:absolute; bottom: -25px; left: calc(50% - 2px); transform:translateX(-50%); width: 9px; height: 9px; background: #fff; border-radius:50%; animation:scroll 1s infinite alternate}
+.mv .scroll::after{content:url(../img/scrollDown_arrow.png); position:absolute; bottom: -25px; left: calc(50% - 1px); transform:translateX(-50%); animation:scroll 1s infinite alternate}
 .mv .fp-tableCell{padding-top: 0; vertical-align: top;}
-.mv .slide_wrap{position: relative; padding-top:100px; font-size:0;}
-.mv .slide_wrap .slide_ctn{width: 100%; height: calc(100vh - 100px); overflow: hidden;}
+.mv .slide_wrap{position: relative; font-size:0;}
+.mv .slide_wrap .slide_ctn{width: 100%; height: 100vh; overflow: hidden;}
 .mv .slide_wrap .slide_ctn .slick-list,
 .mv .slide_wrap .slide_ctn .slick-track{height: 100%;}
 .mv .slide_wrap .slide_ctn .item{top: 0; left: 0; overflow: hidden;}
@@ -35,16 +35,17 @@ figure{margin: 0;}
 .mv .slide_wrap .slide_ctn .item .bg04{background:url(/img/main/mv03.jpg) 50% 50% no-repeat; background-size:cover}
 .mv .slide_wrap .slide_txt{position:absolute; width: 100%; top: 50%; left: 0; transform:translateY(-50%); box-sizing:border-box;}
 .mv .slide_wrap .slide_txt .item{}
-.mv .slide_wrap .slide_txt .item a{display:inline-block; vertical-align: top; font-weight:bold; font-size:17px; letter-spacing:-0.025em; color: #fff; width: 200px; height: 47px; border:1px solid #fff; box-sizing:border-box; text-align: center; line-height: 44px; margin-top: 60px;}
+.mv .slide_wrap .slide_txt .item a{display:inline-block; vertical-align: middle; font-weight:400; font-size:13px; letter-spacing:.5px; color: #fff; width: 200px; height: 50px; border:1px solid #fff; box-sizing:border-box; text-align: center; line-height: 50px; margin-top: 84px;}
 .mv .slide_wrap .slide_txt .item p{position:relative; box-sizing:border-box; font-family: 'Pretendard'; font-weight:500; font-size:16px; letter-spacing:-0.025em; color: #fff; margin-top: 38px;}
 /* .mv .slide_wrap .slide_txt .item p::after{content:""; position:absolute; bottom: 5px; left: 0; width: 0; height: 2px; background: #fff; transition:0.5s 1s} */
 /* .mv .slide_wrap .slide_txt .item p span{display:inline-block; vertical-align: top; font-family: 'Montserrat', sans-serif; font-weight:500; font-size:21px; color: #fff; letter-spacing:-0.03em}  */
-.mv .slide_wrap .slide_txt .item h2{font-weight:bold; font-size:57px; letter-spacing:-0.025em; color: #fff; line-height:1.3em; overflow: hidden;}
+.mv .slide_wrap .slide_txt .item h2{font-weight:300; font-size:57px; letter-spacing:-0.025em; color: #fff; line-height:1.4; overflow: hidden; text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.38);}
 .mv .slide_wrap .slide_txt .item h2 span{display:inline-block; }
 .mv .slide_wrap .slide_ui{position:absolute; bottom: 100px; left: 0; width: 100%; /* max-width:1400px; margin: 0 auto;  */box-sizing:border-box;/*  transform:translateX(-50%); */}
 .mv .slide_wrap .slide_ui .left_box{display:inline-block; width: calc(100% - 257px); vertical-align: middle;}
 .mv .slide_wrap .slide_ui .left_box .play{display:inline-block; vertical-align: top; position:relative; width: 46px; height: 46px; cursor: pointer;}
-.mv .slide_wrap .slide_ui .left_box .play .icon{position:absolute; top: 50%; left: 52%; transform:translate(-50%,-50%); color: #fff; font-size:12px;}
+.mv .slide_wrap .slide_ui .left_box .play .icon{position:absolute; top: 55%; left: 54%; transform:translate(-50%,-50%); color: #fff; font-size:32px;}
+.mv .slide_wrap .slide_ui .left_box .play.on .icon{position:absolute; top: 55%; left: 50%; transform:translate(-50%,-50%); color: #fff; font-size:32px;}
 .mv .slide_wrap .slide_ui .left_box .num{position: relative;top:4px;display:inline-block; vertical-align: top; margin-left: 24px;}
 .mv .slide_wrap .slide_ui .left_box .num p{display:inline-block; vertical-align: bottom; font-family: 'Montserrat', sans-serif; font-weight:bold; font-size:24px; color: #fff;}
 .mv .slide_wrap .slide_ui .left_box .num .current{position:relative; top: 4px;}
@@ -461,7 +462,7 @@ figure{margin: 0;}
 	.w1557,
 	.w1725{padding: 0 32px;}
 
-	.mv .slide_wrap .slide_txt .item h2{font-size:55px;}
+	.mv .slide_wrap .slide_txt .item h2{font-size:65px;}
 	.mv .slide_wrap .slide_txt .item p{margin-bottom:20px;}
 	
 	.m_sup .bot .slide_borad .item .txt,

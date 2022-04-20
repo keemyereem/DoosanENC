@@ -1,36 +1,4 @@
-@charset "utf-8";
 
-/*font + */
-@import url('//fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&subset=korean');
-/* font-family: 'Noto Sans KR', sans-serif; */
-@import url(https://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
-/* font-family: 'Nanum Square'; */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-/* font-family: 'Pretendard'; */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-/* font-family: 'Montserrat', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-/* font-family: 'Roboto', sans-serif; */
-@font-face {
-    font-family: 'Chosunilbo_myungjo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'SBAggroL';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*�巡�׻��� ����*/
-/* ::-moz-selection { background:#263658; color:#fff; }
-::selection { background:#263658; color:#fff; } */
-
-/*�⺻�±� ����*/
 *{  max-height:1000000px; }
 
 html, body{padding:0;margin:0;}
@@ -39,12 +7,16 @@ html, body{padding:0;margin:0;}
 body{-webkit-text-size-adjust:none; }
 
 
-body,table,input,textarea {font-size:12px;font-family: 'Noto Sans KR', 'Malgun Gothic', 'verdana', sans-serif;color:#666;}
+body,table,input,textarea {font-size:12px; font-family: 'Montserrat','NS'; ;color:#666;}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block }
 
 
 /* for AXISJ */
 body, select, input, a, button{line-height:1;}
+
+button, input, select, textarea {vertical-align:top; font-family:inherit; outline-style:none; line-height:normal;}
+button, button:focus, button:active {padding:0;}
+button {margin:0; padding:0; border:0; font:inherit; color:inherit; background:transparent; /* overflow:visible; */ /* cursor:pointer; */ line-height:1;}
 
 /* ��ũ �׵θ� ���� */
 a{outline:none;select-dummy:expression(this.hideFocus=true);}

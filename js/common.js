@@ -4,11 +4,13 @@ $(function() {
     
         var $window = $(window)
         $(".gnb > ul").clone().appendTo(".sitemap nav");
-    
+        
         $(".gnb > ul > li").hover(function(){
-            $(this).children().next().stop().slideDown()
+            $('.header').addClass('on');
+            $(this).find('.sub_depth').addClass('on');
         }, function(){
-            $(this).children().next().stop().slideUp()
+            $(this).find('.sub_depth').removeClass('on');
+            $('.header').removeClass('on');
         })
         
         $(".close").on("click", function(){
@@ -21,31 +23,17 @@ $(function() {
             $(".sitemap nav > ul > li > ul > li > span").next().stop().slideUp()
         })
         $(".m_btn").on("click", function(){
+            $(this).toggleClass('on col_b');
             if($(window).width() < 1200){
                 $("body").css("overflowY","hidden")
             }
-            $(".sitemap").addClass("on")
-        })
-    
-        $(".header_ui .search").on("click", function(){
-            $(".header_ui .search").toggleClass("on")
-            $(".header .search_box").stop().slideToggle()
-            if($(".header_ui .search").hasClass("on")){
-                $(".header .search_box input").val("")
-            }
+            //$(".sitemap").addClass("on")
         })
     
         $(".footer .top_btn").on("click", function(){
             $("html,body").animate({scrollTop: 0},600)
         })
         
-        $(".wrap, .sub").on("click", function(){
-            if($(".header_ui .search").hasClass("on")){
-                $(".header_ui .search").removeClass("on")
-                $(".header .search_box").stop().slideUp()
-                $(".header .search_box input").val("")
-            }
-        })
         $(".page_btn ul li").hover(function(){
             var img = $(this).find("img");
             if(img.size()){
@@ -76,11 +64,11 @@ $(function() {
                 var idx = $(this).index();
                 if($window.width() > 1200){
                     $(".sitemap .left_bg").css({
-                        backgroundImage: "url(/img/common/sitemap0"+(idx + 1)+".jpg)"
+                        backgroundImage: "url(img/common/sitemap0"+(idx + 1)+".jpg)"
                     })
                 } else{
                     $(".sitemap .left_bg").css({
-                        backgroundImage: "url(/img/common/m_sitemap0"+(idx + 1)+".jpg)"
+                        backgroundImage: "url(img/common/m_sitemap0"+(idx + 1)+".jpg)"
                     })
                 }
                 
