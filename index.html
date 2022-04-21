@@ -19,7 +19,8 @@
 	<!-- css block -->
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 	<!-- js block -->
 	<script src="js/jquery.min.js"></script>
@@ -31,17 +32,58 @@
 	<script src="js/jquery.fullpage.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/jquery.bxslider-rahisified.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<!--banner-->
 	
 </head>
 <body>
+	<script type="text/javascript">
+
+		$(function(){
+			$('img.svg').each(function () {
+				var $img = jQuery(this);
+				var imgID = $img.attr('id');
+				var imgClass = $img.attr('class');
+				var imgURL = $img.attr('src');
+				var imgTit = $img.data('tit');
+				
+				jQuery.get(imgURL, function (data) {
+					// Get the SVG tag, ignore the rest
+					var $svg = jQuery(data).find('svg');
+					// Add replaced image's ID to the new SVG
+					if (typeof imgID !== 'undefined') {
+						$svg = $svg.attr('id', imgID);
+					}
+					// Add replaced image's classes to the new SVG
+					if (typeof imgClass !== 'undefined') {
+						$svg = $svg.attr('class', imgClass + ' replaced-svg');
+					}
+					if (imgTit !== undefined){
+						$svg.find("title").text(imgTit)
+					} else{
+						$svg.find("title").remove()
+					}
+					// Remove any invalid XML tags as per http://validator.w3.org
+					$svg = $svg.removeAttr('xmlns:a');
+					// Replace image with new SVG
+					$img.replaceWith($svg);
+				}, 'xml');
+			});
+		})
+		
+		function search_form() {
+			if (searchform.s_keyword.value=='') { alert("검색어를 입력하세요."); searchform.s_keyword.focus(); return false; }
+			searchform.submit();
+		}
+	</script>
 	<header class="header">
 		<div class="header_wrap">
 			<h1 class="logo"><a href="javascript:;"></a></h1>
 			<nav class="gnb">
 				<ul>
 					<li>
-						<a href="javascript:;"><span>회사소개</span></a>
+						<a href="javascript:;"><span>브랜드</span></a>
+						<!-- 
 						<ul class="sub_depth sub_depth01">
 							<li class="chk">
 								<a href="javascript:;">Depth1</a>
@@ -51,140 +93,76 @@
 									<li><a href="javascript:;">Depth2</a></li>
 								</ul>
 							</li>
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>
-						</ul>
+						</ul> 
+						-->
 					</li>
 					<li>
-						<a href="javascript:;"><span>사업분야</span></a>
+						<a href="javascript:;"><span>분양정보</span></a>
+						<!-- 
 						<ul class="sub_depth sub_depth02">					
 							<li><a href="javascript:;">Depth1</a></li>								
-						</ul>
+						</ul> 
+						-->
 					</li>
 					<li>
-						<a href="javascript:;"><span>지속가능경영</span></a>
-						<ul class="sub_depth sub_depth03">
-							<li><a href="javascript:;">Depth1</a></li>	
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>		
-						</ul>
+						<a href="javascript:;"><span>현장안내</span></a>
 					</li>
 					<li>
-						<a href="javascript:;"><span>기술개발</span></a>
-						<ul class="sub_depth sub_depth04">
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>	
-									<li><a href="javascript:;">Depth2</a></li>	
-								</ul>
-							</li>
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>
-						</ul>
+						<a href="javascript:;"><span>커뮤니티</span></a>
 					</li>
 					<li>
-						<a href="javascript:;"><span>투자정보</span></a>
-						<ul class="sub_depth sub_depth05">
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-							</li>
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:;"><span>홍보센터</span></a>
-						<ul class="sub_depth sub_depth05">
-							<li class="chk">
-								<a href="javascript:;">Depth1</a>
-								<ul class="depth3">
-									<li><a href="javascript:;">Depth2</a></li>
-								</ul>
-							</li>
-						</ul>
+						<a href="javascript:;"><span>고객서비스</span></a>
 					</li>
 				</ul>
 			</nav>
 
 			<div class="header_ui">
-				<ul class="lang">
-					<li class="on"><a href="/">KR</a></li>
-					<li><a href="en">EN</a></li>
-				</ul>
 				<div class="icon">
-					<div class="m_btn">
-						<button>
-							<span></span>
-							<span></span>
-							<span></span>
-						</button>
-					</div>
+					<div class="payment">중도금 납입</div>
+					<div class="calander"></div>
+					<div class="search"></div>
+					<div class="date">분양일 <b>D- <span class="date_num">0</span></b></div>
 				</div>
 			</div>
+			<!-- <div class="search_box">
+				<form action="/sub/search/search_in.asp" name="searchform" method="post">
+					<input type="text" name="s_keyword" placeholder="검색어를 입력해 주세요.">
+					<button type="button" onclick="search_form()"><img src="img/common/icon_search.png" alt=""></button>
+				</form>
+			</div> -->	
 		</div>
+		
 	</header>
-
+	
 	<!--index 페이지 아닐때-->
 	<div class="wrap">
 		<div id="fullpage">
 			<section class="section mv">
+				<div class="side_nav"></div>
 				<div class="slide_wrap">
+					
+					<div class="side_nav_wrap">
+						<div class="bg">
+							<p class="on"><a href="javascript:;">We've</a></p>
+							<p><a href="javascript:;">Centi’um</a></p>
+							<p><a href="javascript:;">THE ZENITH</a></p>
+						</div>
+					</div>
 					<div class="slide_ctn">
 						<div class="item">
 							<div class="bg bg01">
-								<video id="video01" autoplay playsinline muted data-keepplaying>
+								<!-- <video id="video01" autoplay playsinline muted data-keepplaying>
 									<source src="video/main_video01.mp4" type="video/mp4">
-								</video>
+								</video> -->
+								<img id="video01" src="img/brand_bg1.png">
 							</div>
 						</div>
 						<div class="item">
 							<div class="bg bg02">
-								<video id="video02" autoplay playsinline muted data-keepplaying>
+								<!-- <video id="video02" autoplay playsinline muted data-keepplaying>
 									<source src="video/main_video02.mp4" type="video/mp4">
-								</video>
+								</video> -->
+								<img id="video02" src="img/brand_bg2.png">
 							</div>
 						</div>
 					</div>
@@ -193,25 +171,30 @@
 							<div class="item">
 								<h2><span>대한민국을 더 좋은 세상으로</span></h2>
 								<h2><span>만들어나가는 두산건설</span></h2>
-								<a href="javascript:;">VIEW MORE</a>
+								<a href="javascript:;">READ MORE</a>
 							</div>
 							<div class="item">
 								<h2><span>풍부한 노하우와</span></h2>
 								<h2><span>기술을 축적해온 두산건설</span></h2>
 								<!--<p class="split plus">부가설명란</p>-->
-								<a href="javascript:;">VIEW MORE</a>
+								<a href="javascript:;">READ MORE</a>
 							</div>
 						</div>
 					</div>
 					<div class="slide_ui">
 						<div class="w1565">
 							<div class="left_box">
+								
 								<div class="play">
-									<svg style="width: 100%; height: 100%;  transform:rotate(270deg)" viewBox="0 0 46 46">
-										<circle class="p_bg" cx="23" cy="23" r="22.5" stroke-width="1" style="fill:none; stroke: #fff; opacity: 0.3; "></circle>
-										<circle class="p_bar" cx="23" cy="23" r="22.5" stroke-width="1" style="fill:none; stroke: #fff; stroke-dasharray:140; stroke-dashoffset:140;"></circle>
+									<svg>
+										<path class="p_bg" d="M5 0 l116 0" stroke-width="10" style="fill:none; stroke: #fff; opacity: 0.3; "></path>
+										<path class="p_bar" d="M5 0 l116 0" stroke-width="10" style="fill: none; stroke: rgb(255, 255, 255); stroke-dasharray: 116; stroke-dashoffset: 116;"></path>
 									</svg>
-									<div class="icon"><i class="xi-play"></i></div>	
+									<!-- <div class="icon"><i class="xi-play"></i></div> -->
+									<div class="slide_btn">
+										<div class="prev"><img src="img/slide_prev.png" alt="prev"></div>
+										<div class="next"><img src="img/slide_next.png" alt="next"></div>
+									</div>
 								</div>
 								<div class="num">
 									<p class="current">01</p>
@@ -219,19 +202,148 @@
 									<p class="all">03</p>
 								</div>
 							</div>
-							<div class="slide_btn">
-								<div class="prev"><p>PREV</p></div>
-								<span>/</span>
-								<div class="next"><p>NEXT</p></div>
-							</div>
+							
 						</div>
 					</div>
 					<div class="scroll">
-						<figure><img src="img/scrollDown.png" alt=""></figure>
+						<figure><img src="/img/scrollDown.png" alt="scroll_down"></figure>
 					</div>
 				</div>
 			</section> 
 
+			<section class="section m_pro">
+				<div class="w1725">
+					<div class="txt_box">
+						<div class="m_tit">
+							<h3>
+								빛이 필요한<br> 
+								모든 곳에,<br> 
+								<em>번개표</em>
+							</h3>
+							<p class="c">
+								SINCE 1935,<br> 
+								오직 빛만을 연구해 온 기업<br> 
+								대한민국 빛의 역사와 함께해 온<br> 
+								번개표 금호전기의<br> 
+								대표 제품을 소개합니다.
+							</p>
+						</div>
+						<div class="btn_ctn">
+							<ul>
+								<li><a href="/sub/support/support_reference.asp"><i class="xi-angle-down-min"></i>카다로그 다운로드</a></li>
+								<li class="bg_c popB"><a href="/sub/support/customer_inquiry.asp"><i class="xi-angle-right-min"></i>제품 문의 및 구매상담</a></li>
+							</ul>
+							<div class="pop_ctn">
+								<div class="close_btn">
+									<i class="xi-close"></i>
+								</div>
+								<dl>
+									<dt>지역별</dt>
+									<dd>
+										<ul>
+											<li>서울, 경기, 강원 <span>070-7005-1368</span></li>
+											<li>충청, 광주, 전북, 전남, 제주 <span>070-4163-2032</span></li>
+											<li>대구, 경북 <span>053-382-5700</span></li>
+											<li>부산, 경남 <span>051-817-4224</span></li>
+										</ul>
+									</dd>
+								</dl>
+								<dl>
+									<dt>조달청 나라장터</dt>
+									<dd>
+										<ul>
+											<li>(산업용/빌딩/주차장등/제품대량구매)</li>
+											<li><span>특수조명영업팀 070-7005-1353</span></li>
+										</ul>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="slide_wrap">
+						<div class="slide_ui">
+							<div class="slide_btn ani">
+								<div class="prev"><i class="xi-angle-up"></i></div>
+								<div class="num_box">
+									<p class="current">01</p>
+									<p class="all">05</p>
+								</div>
+								<div class="next"><i class="xi-angle-down"></i></div>
+							</div>
+							<div class="slide_dots ani">
+								<div class="dot on">
+									<div class="txt">
+										<h4>일반<br> 조명</h4>
+										<p>general<br> LIGHTING</p>
+									</div>	
+									<div class="arrow_img">
+										<img src="/img/main/icon_arrowL.png" alt="">
+									</div>
+									<a href="/sub/products/list.asp?s_cate=일반조명&p_cate=10"></a>
+								</div>
+								<div class="dot">
+									<div class="txt">
+										<h4>LED<br> 조명</h4>
+										<p>LED<br> LIGHTING</p>
+									</div>	
+									<div class="arrow_img">
+										<img src="/img/main/icon_arrowL.png" alt="">
+									</div>
+									<a href="/sub/products/list.asp?s_cate=LED조명&p_cate=11"></a>
+								</div>
+								<div class="dot">
+									<div class="txt">
+										<h4>산업용<br> 조명</h4>
+										<p>INDUSTRIAL<br> LIGHTING</p>
+									</div>	
+									<div class="arrow_img">
+										<img src="/img/main/icon_arrowL.png" alt="">
+									</div>
+									<a href="/sub/products/list.asp?s_cate=산업용조명&p_cate=12"></a>
+								</div>
+								<div class="dot">
+									<div class="txt">
+										<h4>SMART<br> 조명 시스템</h4>
+										<p>smart<br> LIGHTING system</p>
+									</div>	
+									<div class="arrow_img">
+										<img src="/img/main/icon_arrowL.png" alt="">
+									</div>
+									<a href="/sub/products/list.asp?s_cate=스마트조명&p_cate=13"></a>
+								</div>
+								<div class="dot">
+									<div class="txt">
+										<h4>조달용<br> 조명</h4>
+										<p>PROCUREMENT<br> LIGHTING</p>
+									</div>	
+									<div class="arrow_img">
+										<img src="/img/main/icon_arrowL.png" alt="">
+									</div>
+									<a href="/sub/products/list.asp?s_cate=조달조명&p_cate=14"></a>
+								</div>
+							</div>
+							<div class="slide_ctn">
+								<div class="item">
+									<div class="bg bg01"></div>
+								</div>
+								<div class="item">
+									<div class="bg bg02"></div>
+								</div>
+								<div class="item">
+									<div class="bg bg03"></div>
+								</div>
+								<div class="item">
+									<div class="bg bg04"></div>
+								</div>
+								<div class="item">
+									<div class="bg bg05"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pro-bar pro-ani"></div> 
+				</div>
+			</section>
 			<!-- 여기까지 메인배너 -->
 
 

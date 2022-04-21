@@ -1,0 +1,325 @@
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<!--[if lt IE 9]>
+		<script src="/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<title>두산건설</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta property="og:image" content="/img/common/img.png" />
+
+	<!-- css block -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+	<!-- js block -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="//code.jquery.com/jquery-latest.js"></script>
+	<script src="js/jquery.rwdImageMaps.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.fullpage.js"></script>
+	<script src="js/test.js"></script>
+	<script src="js/jquery.bxslider-rahisified.js"></script>
+	<!--banner-->
+	
+</head>
+<body>
+	<script type="text/javascript">
+
+		$(function(){
+			$('img.svg').each(function () {
+				var $img = jQuery(this);
+				var imgID = $img.attr('id');
+				var imgClass = $img.attr('class');
+				var imgURL = $img.attr('src');
+				var imgTit = $img.data('tit');
+				
+				jQuery.get(imgURL, function (data) {
+					// Get the SVG tag, ignore the rest
+					var $svg = jQuery(data).find('svg');
+					// Add replaced image's ID to the new SVG
+					if (typeof imgID !== 'undefined') {
+						$svg = $svg.attr('id', imgID);
+					}
+					// Add replaced image's classes to the new SVG
+					if (typeof imgClass !== 'undefined') {
+						$svg = $svg.attr('class', imgClass + ' replaced-svg');
+					}
+					if (imgTit !== undefined){
+						$svg.find("title").text(imgTit)
+					} else{
+						$svg.find("title").remove()
+					}
+					// Remove any invalid XML tags as per http://validator.w3.org
+					$svg = $svg.removeAttr('xmlns:a');
+					// Replace image with new SVG
+					$img.replaceWith($svg);
+				}, 'xml');
+			});
+		})
+		
+		function search_form() {
+			if (searchform.s_keyword.value=='') { alert("검색어를 입력하세요."); searchform.s_keyword.focus(); return false; }
+			searchform.submit();
+		}
+	</script>
+	<header class="header">
+		<div class="header_wrap">
+			<h1 class="logo"><a href="javascript:;"></a></h1>
+			<nav class="gnb">
+				<ul>
+					<li>
+						<a href="javascript:;"><span>회사소개</span></a>
+						<ul class="sub_depth sub_depth01">
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><span>사업분야</span></a>
+						<ul class="sub_depth sub_depth02">					
+							<li><a href="javascript:;">Depth1</a></li>								
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><span>지속가능경영</span></a>
+						<ul class="sub_depth sub_depth03">
+							<li><a href="javascript:;">Depth1</a></li>	
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>		
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><span>기술개발</span></a>
+						<ul class="sub_depth sub_depth04">
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>	
+									<li><a href="javascript:;">Depth2</a></li>	
+								</ul>
+							</li>
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><span>투자정보</span></a>
+						<ul class="sub_depth sub_depth05">
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+							</li>
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><span>홍보센터</span></a>
+						<ul class="sub_depth sub_depth05">
+							<li class="chk">
+								<a href="javascript:;">Depth1</a>
+								<ul class="depth3">
+									<li><a href="javascript:;">Depth2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header_ui">
+				<div class="icon">
+					<div class="search">
+						<img src="img/common/icon_search_W.png" alt="" class="on">
+						<img src="img/common/icon_search_B.png" alt="">
+					</div>
+					<div class="m_btn">
+						<button>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="search_box" style="display: block;">
+				<form action="/sub/search/search_in.asp" name="searchform" method="post">
+					<input type="text" name="s_keyword" placeholder="검색어를 입력해 주세요.">
+					<button type="button" onclick="search_form()"><img src="img/common/icon_search.png" alt=""></button>
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<!--index 페이지 아닐때-->
+	<div class="wrap">
+		<div id="fullpage">
+			<section class="section mv">
+				<div class="slide_wrap">
+					<div class="slide_ctn">
+						<div class="item">
+							<div class="bg bg01">
+								<video id="video01" autoplay playsinline muted data-keepplaying>
+									<source src="video/main_video01.mp4" type="video/mp4">
+								</video>
+							</div>
+						</div>
+						<div class="item">
+							<div class="bg bg02">
+								<video id="video02" autoplay playsinline muted data-keepplaying>
+									<source src="video/main_video02.mp4" type="video/mp4">
+								</video>
+							</div>
+						</div>
+					</div>
+					<div class="slide_txt">
+						<div class="w1565">
+							<div class="item">
+								<h2><span>대한민국을 더 좋은 세상으로</span></h2>
+								<h2><span>만들어나가는 두산건설</span></h2>
+								<a href="javascript:;">VIEW MORE</a>
+							</div>
+							<div class="item">
+								<h2><span>풍부한 노하우와</span></h2>
+								<h2><span>기술을 축적해온 두산건설</span></h2>
+								<!--<p class="split plus">부가설명란</p>-->
+								<a href="javascript:;">VIEW MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="slide_ui">
+						<div class="w1565">
+							<div class="left_box">
+								<div class="play">
+									<svg style="width: 100%; height: 100%;" viewBox="0 0 46 46">
+										<line class="p_bg" x1="-200" y1="0" x2="400" y2="0" stroke-width="5" style="fill:none; stroke: #f00; opacity: 0.5; "></line>
+										<line class="p_bar" x1="-200" y1="0" x2="400" y2="0" stroke-width="5" style="fill:none; stroke: #fff; stroke-dasharray:600; stroke-dashoffset:600;"></line>
+									</svg>
+									<!-- <div class="icon"><i class="xi-play"></i></div> -->
+								</div>
+								<div class="num">
+									<p class="current">01</p>
+									<span>/</span>
+									<p class="all">03</p>
+								</div>
+							</div>
+							<div class="slide_btn">
+								<div class="prev"><p>PREV</p></div>
+								<span>/</span>
+								<div class="next"><p>NEXT</p></div>
+							</div>
+						</div>
+					</div>
+					<div class="scroll">
+						<figure><img src="img/scrollDown.png" alt=""></figure>
+					</div>
+				</div>
+			</section> 
+
+			<!-- 여기까지 메인배너 -->
+
+
+
+
+
+
+
+
+																								<!-- Component -->
+
+
+
+
+
+
+
+
+
+			<!-- 여기부터 푸터 -->
+			
+			<footer class="footer section fp-auto-height">
+				<div class="w1400">
+					<div class="top_box">
+						<ul class="f_link">
+							<li><a href="javascript:;"><b>인재채용</b></a></li>
+							<li><a href="javascript:;"><b>고객센터</b></a></li>	
+							<li><a href="javascript:;">개인정보처리방침</a></li>	
+							<li><a href="javascript:;">공정거래</a></li>	
+							<li><a href="javascript:;">법적고지</a></li>
+							<li><a href="javascript:;">이용약관</a></li>
+						</ul>
+						<div class="site_link">
+							<a href="javascript:;">Related Site</a>
+						</div>
+					</div>
+					<p class="copy">COPYRIGHT (C)2022 DOOSAN. ALL RIGHTS DESERVED.</p>
+				</div>		
+			</footer>
+
+		</div><!-- 풀페이지 div & subWrap div  -->
+	</div>
+
+</body>
+</html>
