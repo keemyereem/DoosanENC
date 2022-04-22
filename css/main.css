@@ -32,7 +32,7 @@
 .mv .slide_wrap .slide_ui .left_box .num p{ vertical-align: bottom; font-weight:bold; font-size:30px; color: #fff; font-weight: 200;}
 .mv .slide_wrap .slide_ui .left_box .num .current{ font-weight: 400;}
 .mv .slide_wrap .slide_ui .left_box .num span{vertical-align: bottom; font-size:14px; color: #fff; margin: 5px 3px 0 11px;  font-weight: 200;} 
-.mv .slide_wrap .slide_ui .left_box .num .all{font-size:16px; }
+.mv .slide_wrap .slide_ui .left_box .num .all{font-size:16px;  }
 
 
 /* ani */

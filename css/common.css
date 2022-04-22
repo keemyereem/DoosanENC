@@ -32,7 +32,7 @@ body *{line-height:1.2em; word-break:keep-all; box-sizing: border-box; }
 .header .header_wrap .gnb > ul > li > ul > li > .depth3 > li > a:hover,
 .header .header_wrap .gnb > ul > li:hover > a{color: #e50012;}
 .header .header_wrap .gnb > ul > li:hover > a > span::after{width: 120%;}
-.header .header_wrap .gnb > ul > li > ul > li > .depth3 > li > a:hover{background-size:100% 1px;}
+.header .header_wrap .gnb > ul > li > ul > li > .depth3 > li > a:hover{background-size:100% 1px; }
 
 .header .header_wrap .header_ui{ width: fit-content; margin-left: auto; }
 .header .header_wrap .header_ui .icon {display:flex; align-items: center; flex-wrap: wrap;}

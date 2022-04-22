@@ -108,7 +108,7 @@ $(function(){
 		arrows:false,
 		speed: speed,
 		fade:true,
-		asNavFor: mvSlide
+		asNavFor: mvSlide 
 	})
 
 	mvSlide.on("beforeChange", function (e, slick, currentSlide, nextSlide) {
