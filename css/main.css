@@ -1,7 +1,7 @@
 
 .w1725{width: 100%; max-width:1725px; margin-left: auto; box-sizing:border-box;}
 .w1565{width: 100%; max-width:1565px; margin-left: auto; box-sizing:border-box;}
-.w1446{width: 100%; max-width:1446px; margin-left: auto; box-sizing:border-box;}
+.w1446{width: 100%; max-width:1446px; margin-left: auto;margin-right: auto;box-sizing:border-box;}
 .wrap{overflow: hidden;}
 
 .mv{position: relative;}
@@ -103,21 +103,58 @@
 
 
 /* calendar */
-.calendar {width: 100%;height: 100%;background: url(../img/cal_bg.png) no-repeat 50% 50%;background-size: cover;}
-.calendar h1.s_tit {font-family: 'Raleway';font-size: 56px;font-weight: 400;color: #fff;}
-p.sub_txt {font-size: 18px;font-weight: 100;color: #fff;}
+.calendar {width: 100%;height: 100%;background: url(../img/cal_bg.png) no-repeat 50% 50%;background-size: cover;position: relative;}
+.calendar .top {display: flex;align-items: center;margin: 120px 0 80px;}
+.calendar h1.s_tit {font-family: 'Raleway';font-size: 56px;font-weight: 400;color: #fff;margin-left: 120px;margin-right: 80px;}
+.calendar p.sub_txt {font-size: 18px;font-weight: 100;color: #fff;}
+.calendar .btn {width: 200px;height: 48px;border-radius: 24px;background: #fff;padding: 0 30px;margin-left: auto;}
+.calendar .btn > a {color: #009fdb;line-height: 48px;font-size: 14px;font-weight: 150;}
+.calendar .btn > a:before {content:'';display: inline-block;width: 23px;height: 24px;background: url(../img/cal_icon.png) no-repeat;vertical-align: middle;margin-right: 10px;}
+.calendar .slider_wrap {margin-left: 240px;width: 2120px;}
+.calendar .slider_wrap .item {width: 531px;height: 670px;border: 1px solid rgba(255, 255, 255,.2);border-bottom: 0;padding: 70px 120px;position: relative;transition: all .3s;}
+.calendar .slider_wrap .item .date {display: flex;align-items: center;}
+.calendar .slider_wrap .item .date .num {font-family: 'Roboto';font-size: 56px;color: #fff;line-height: normal;display: inline-block;margin-right: 20px;}
+.calendar .slider_wrap .item .tit:before {content:'';display: block;width: 35px;height: 3px;background: #fff;opacity: .4;margin: 40px 0;}
+.calendar .slider_wrap .item .tit {font-size: 28px;font-weight: 400;color: #fff;opacity: .4;}
+.calendar .slider_wrap .item .txt {font-size: 16px;color: #fff;font-weight: 200;opacity: .4;margin-top: 30px;}
+.calendar .slider_wrap .item .read_more {font-family: 'Raleway';font-size: 16px;font-weight: 400;color: #fff;opacity: .4;display: inline-block;margin-top: 60px;padding-right: 50px; position: relative;}
+.calendar .slider_wrap .item .read_more:after {content:'';display: inline-block;width: 12px;height: 12px;background: url(../img/readmore_arrow_w.png) no-repeat;vertical-align: baseline;position: absolute;bottom: 4px;right: 0;}
+.calendar .slider_wrap .item .tag {width: 60px;height: 60px;border-radius: 50%;background: #f3bd00;color: #fff;font-size: 14px;font-weight: 200;text-align: center;padding-top: 13px;box-shadow: 1px 2px 9.8px 0.2px rgba(0, 0, 0, 0.1);position: absolute;top: 212px;right: 80px;}
+.calendar .slider_wrap .item .tag.grn {background: #00ad7f;}
+.calendar .slider_wrap .item:hover {background: rgba(255,255,255,.2) url(../img/cal_hover.png) 0 100%;background-size: cover;}
+.calendar .slider_wrap .item:hover .tit,
+.calendar .slider_wrap .item:hover .txt,
+.calendar .slider_wrap .item:hover .read_more {opacity: 1;}
+.calendar .slider_wrap .item:hover .read_more:after {animation: readmore 1.5s infinite ease-out;}
+.calendar .slider_wrap .item:hover .tag {transform: rotate(360deg);transition: transform .8s;}
+.calendar .slider_wrap .slick-arrow {display: none;}
+.calendar .nav_bar {
+	width: calc(100% - 360px);
+	height: 1px;
+	background-image: linear-gradient(90deg, #75caeb, #75caeb 75%, transparent 75%, transparent 100%);
+	background-size: 5px 1px;
+	border: none;
+	position: absolute;
+	left: 360px;bottom: 120px;
+}
+.calendar .nav_bar .progress {
+	display: block;
+	width: 100%;
+	height: 2px;
+	overflow: hidden;
+	background-color: transparent;
+	background-image: linear-gradient(to right, #fff, #fff);
+	background-repeat: no-repeat;
+	background-size: 0 100%;
+	border-bottom: 1px dashed rgba((255,255,255,.4));
+	transition: background-size .5s ease-in-out;
+	position: absolute;left: 0;bottom: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+/* community */
+.community {display: flex;}
+.community .left {width: 670px;height: 100%;background: url(../img/com_bg.png) no-repeat 50% 50%;color: #fff;}
+.community h1.s_tit {font-family: 'Raleway';font-size: 56px;font-weight: 400;}
 
 
 
@@ -143,6 +180,12 @@ p.sub_txt {font-size: 18px;font-weight: 100;color: #fff;}
 
 
 /* ani tool */
+@keyframes readmore{
+	0%{right: 0;bottom: 4px;}
+	50%{right: -5px;bottom: 9px;}
+	100%{right: 0px;bottom: 4px;}
+}
+
 @keyframes height{
 	0%{height:100%}
 	100%{height:0%}

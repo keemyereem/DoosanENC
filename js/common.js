@@ -198,4 +198,26 @@ $(function(){
 	// })
 
 
+	/* ----------------------------- */
+	$('.calendar .slider_wrap').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		infinite: true,
+		cssEase: 'ease-out',
+		arrows: false,
+	});
+
+	$('.community .slider_wrap').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		infinite: true,
+		cssEase: 'ease-out',
+		arrows: false,
+	});
+
+
 })
